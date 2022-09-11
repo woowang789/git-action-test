@@ -18,15 +18,20 @@ jobs:
     - name: Build with Gradle
       run: |
         ./gradlew --version
-        ./gradlew build # 빌드 
+        ./gradlew build # 빌드
+    - name: Make Dir
+      run : mkdir test
 
-    # Jar 파일 복사 123
+    # Jar 파일 복사
     - name: Copy Jar
-      run: cp ./build/libs/*.jar
+      run: cp ./build/libs/*.jar ./test
+
+    - name: Copy appspec
+      run: cp ./appspec.yml ./test
 
     # 파일 압축
     - name: Make zip file
-      run: zip -r ./test.zip .
+      run: zip -r ./test.zip ./test
         
     # Deploy
     - name: Deploy
