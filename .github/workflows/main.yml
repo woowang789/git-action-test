@@ -21,7 +21,9 @@ jobs:
         ./gradlew bootJar # 빌드
 
     - name: Make Dir
-      run : mkdir test
+      run : |
+        mkdir test
+        mkdir test/scripts
 
     # Jar 파일 복사
     - name: Copy Jar
