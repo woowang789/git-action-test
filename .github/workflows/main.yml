@@ -18,7 +18,8 @@ jobs:
     - name: Build with Gradle
       run: |
         ./gradlew --version
-        ./gradlew build # 빌드
+        ./gradlew bootJar # 빌드
+
     - name: Make Dir
       run : mkdir test
 
