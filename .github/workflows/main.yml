@@ -26,11 +26,11 @@ jobs:
 
     # Jar 파일 복사
     - name: Copy Jar
-      run: cp ./build/libs/*.jar ./deploy
+      run: cp ./build/libs/*.jar
 
     # 파일 압축
     - name: Make zip file
-      run: zip -r ./springboot-with-githubaction.zip ./deploy
+      run: zip -r ./deploy.zip .
         
     # Deploy
     - name: Deploy
@@ -41,7 +41,7 @@ jobs:
         aws-region: ap-northeast-2
         
     - name: Upload to S3
-      run: aws s3 cp --region ap-northeast-2 ./springboot-with-githubaction.zip s3://matdongsan-test/
+      run: aws s3 cp --region ap-northeast-2 ./deploy.zip s3://matdongsan-test/
 
     - name: Code Deploy
-      run: aws deploy create-deployment --application-name springboot-test --deployment-config-name CodeDeployDefault.AllAtOnce --deployment-group-name deploy-group --s3-location bucket=matdongsan-test,bundleType=zip,key=springboot-with-githubaction.zip
+      run: aws deploy create-deployment --application-name springboot-test --deployment-config-name CodeDeployDefault.AllAtOnce --deployment-group-name deploy-group --s3-location bucket=matdongsan-test,bundleType=zip,key=deploy.zip
