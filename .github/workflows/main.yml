@@ -25,6 +25,4 @@ jobs:
         AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_KEY }}
       run: |
-        aws s3 cp \
-          --region ap-northeast-2 \
-          ./build/libs/*.jar s3://matdongsan-test
+        aws s3 cp ./build/libs/*.jar s3://matdongsan-test/deploy/
