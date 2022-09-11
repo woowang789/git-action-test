@@ -20,7 +20,7 @@ jobs:
         ./gradlew --version
         ./gradlew build # 빌드 
 
-    # Jar 파일 복사
+    # Jar 파일 복사 123
     - name: Copy Jar
       run: cp ./build/libs/*.jar
 
