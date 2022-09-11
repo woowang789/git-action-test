@@ -20,6 +20,18 @@ jobs:
         ./gradlew --version
         ./gradlew build # 빌드 
         
+   # 디렉토리 생성
+    - name: Make Directory
+      run: mkdir -p deploy
+
+    # Jar 파일 복사
+    - name: Copy Jar
+      run: cp ./build/libs/*.jar ./deploy
+
+    # 파일 압축
+    - name: Make zip file
+      run: zip -r ./springboor-with-githubaction.zip ./deploy
+        
     # Deploy
     - name: Deploy
       uses: aws-actions/configure-aws-credentials@v1
@@ -29,4 +41,4 @@ jobs:
         aws-region: ap-northeast-2
         
     - name: Upload to S3
-      run: aws s3 cp --region ap-northeast-2 ./build/libs/*.jar s3://matdongsan-test/deploy/
+      run: aws s3 cp --region ap-northeast-2 ./springboor-with-githubaction.zip s3://matdongsan-test/deploy/
