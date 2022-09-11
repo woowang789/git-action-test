@@ -30,7 +30,7 @@ jobs:
     - name: Copy appspec
       run: cp ./appspec.yml ./test
 
-    # 파일 압축1
+    # 파일 압축
     - name: Make zip file
       run: zip -r ./test.zip ./test
         
