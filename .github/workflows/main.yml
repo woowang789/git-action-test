@@ -44,4 +44,4 @@ jobs:
       run: aws s3 cp --region ap-northeast-2 ./springboot-with-githubaction.zip s3://matdongsan-test/
 
     - name: Code Deploy
-      run: aws deploy create-deployment --application-name springboot-test --deployment-config-name CodeDeployDefault.AllAtOnce --deployment-group-name deploy-group --s3-location bucket=matdongsan-test,bundleType=zip,key=springboor-with-githubaction.zip
+      run: aws deploy create-deployment --application-name springboot-test --deployment-config-name CodeDeployDefault.AllAtOnce --deployment-group-name deploy-group --s3-location bucket=matdongsan-test,bundleType=zip,key=springboot-with-githubaction.zip
