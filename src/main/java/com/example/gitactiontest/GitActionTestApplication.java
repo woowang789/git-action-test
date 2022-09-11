@@ -7,12 +7,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
-@RestController
+@Controller
 public class GitActionTestApplication {
 
     @GetMapping
     public String test(){
-        return "ttt123123";
+        return "index";
     }
 
     public static void main(String[] args) {
