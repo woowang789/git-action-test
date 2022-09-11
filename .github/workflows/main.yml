@@ -29,7 +29,7 @@ jobs:
 
     # script
     - name: Copy script
-      run : cp -r ./scripts/* ./test
+      run : cp -r ./scripts/* ./test/scripts
 
     # appspec
     - name: Copy appspec
