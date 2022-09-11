@@ -12,7 +12,7 @@ public class GitActionTestApplication {
 
     @GetMapping
     public String test(){
-        return "ok";
+        return "okkkk";
     }
 
     public static void main(String[] args) {
